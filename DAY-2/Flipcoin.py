@@ -1,35 +1,24 @@
-import random
+# Calculate probabilities for coin flips
 
-def flip_coin():
-    """Simulates flipping a fair coin and returns 'Heads' or 'Tails'"""
-    if random.random() < 0.5:
-        return "Heads"
-    else:
-        return "Tails"
+# Initial conditions
+possible_outcomes = 2  # Heads and Tails
 
-def analyze_flips(num_flips):
-    """Analyzes statistics of multiple coin flips"""
-    # Track results
-    heads_count = 0
-    tails_count = 0
-    
-    # Perform flips
-    for _ in range(num_flips):
-        result = flip_coin()
-        if result == "Heads":
-            heads_count += 1
-        else:
-            tails_count += 1
-    
-    # Calculate probabilities
-    heads_prob = (heads_count / num_flips) * 100
-    tails_prob = (tails_count / num_flips) * 100
-    
-    # Print results
-    print(f"\nResults from {num_flips} coin flips:")
-    print(f"Heads: {heads_count} times ({heads_prob:.1f}%)")
-    print(f"Tails: {tails_count} times ({tails_prob:.1f}%)")
-    print(f"Expected probability for each: 50.0%")
+print("Probability Analysis for a Fair Coin:")
+print("-" * 35)
 
-# Test with 1000 flips
-analyze_flips(10)
+# For a fair coin, probability of heads = probability of tails = 1/2
+print("\nFor a fair coin:")
+print(f"Probability of getting Heads: 1/{possible_outcomes}")
+print(f"Probability of getting Tails: 1/{possible_outcomes}")
+
+# Some additional probability scenarios
+print("\nOther probability scenarios:")
+
+# Probability of getting either heads or tails (certainty)
+print(f"Probability of getting either Heads or Tails: {possible_outcomes}/{possible_outcomes}")
+
+# Probability of getting heads in two consecutive flips
+consecutive_heads = f"1/{possible_outcomes * possible_outcomes}"  # 1/4
+print(f"Probability of getting two consecutive Heads: {consecutive_heads}")
+
+# Note: These probabilities assume a fair coin where both outcomes are equally likely

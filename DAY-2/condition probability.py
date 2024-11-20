@@ -1,39 +1,23 @@
-import random
+# Calculate conditional probability of drawing a red ball given certain conditions
 
-def simulate_events(num_trials):
-    """Simulates two dependent events and calculates conditional probability"""
-    # Event A: Drawing a heart
-    # Event B: Drawing a face card (given that we drew a heart)
-    
-    hearts_count = 0  # Total hearts drawn
-    heart_face_count = 0  # Face cards among hearts
-    
-    for _ in range(num_trials):
-        # Simulate drawing a card
-        suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
-        ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
-        
-        suit = random.choice(suits)
-        rank = random.choice(ranks)
-        
-        # Check if it's a heart
-        if suit == 'Hearts':
-            hearts_count += 1
-            # Check if it's also a face card
-            if rank in ['Jack', 'Queen', 'King']:
-                heart_face_count += 1
-    
-    # Calculate probabilities
-    p_heart = hearts_count / num_trials
-    p_face_given_heart = heart_face_count / hearts_count if hearts_count > 0 else 0
-    
-    # Print results
-    print(f"\nResults from {num_trials} trials:")
-    print(f"Probability of drawing a heart: {p_heart:.3f}")
-    print(f"Probability of drawing a face card, given that it's a heart: {p_face_given_heart:.3f}")
-    print("\nTheoretical probabilities:")
-    print(f"P(Heart) = 0.250")
-    print(f"P(Face|Heart) = 0.231")
+# Initial conditions
+total_balls = 5
+red_balls = 2
+blue_balls = 3
 
-# Run simulation with 1000 trials
-simulate_events(10)
+# First draw: Probability of drawing a red ball
+prob_first_red = red_balls/total_balls
+
+# Second draw (without replacement): 
+# Probability of drawing another red ball GIVEN that first ball was red
+prob_second_red_given_first_red = (red_balls - 1)/(total_balls - 1)
+
+# Calculate conditional probability as a fraction
+conditional_probability = f"{red_balls - 1}/{total_balls - 1}"
+
+print(f"Probability of first red ball: {red_balls}/{total_balls}")
+print(f"Conditional probability of second red ball given first was red: {conditional_probability}")
+# This will output: 
+# Probability of first red ball: 2/5
+# Conditional probability of second red ball given first was red: 1/4
+

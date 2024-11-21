@@ -1,0 +1,18 @@
+Probability :
+The chance of something happening.
+Experiment :
+An action or process that produces results you can observe or measure.
+Outcome :
+The result of a single trial of an experiment.
+Event :
+A collection of one or more outcomes.
+Permutation :
+The arrangement of items where order matters.
+Combination :
+A selection of items where order does NOT matter.
+Union :
+The outcomes that are in either of two events (or both).
+Intersection :
+The outcomes that are in both events.
+Complement :
+The outcomes that are not in an event.
